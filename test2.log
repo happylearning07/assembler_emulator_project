@@ -1,0 +1,18 @@
+LabelName : Value
+label:0
+
+Used Labels
+
+Warnings
+Line 0 : Unused Label
+
+Errors
+Line 0 : No such Label
+Line 0 : Not a Valid Format(0x-hex and 0-oct)
+Line 4 : Duplicate Label
+Line 7 : No Operand found
+Line 8 : Unexpected Operand, No Operand is allowed
+Line 9 : Unexpected Operand, Only One Operand is allowed
+Line 10 : Invalid Label Name
+Line 11 : No such instruction
+Line 12 : No such instruction

@@ -1,0 +1,241 @@
+/**********************************************************************************************************************************************
+TITLE : Claims
+
+AUTHOR      :   JUHI SAHNI
+ROLL NUMBER :   2301CS88
+DECLARATION OF AUTHORSHIP :
+This file (claims.txt) is a part of miniproject CS2102 at Department of Computer Science and Engineering at IIT Patna.
+************************************************************************************************************************************************/
+
+Information about Files:
+------------------------
+
+*All the files that I have submitted include my name and roll number at the start , along with declaration of authorship.
+
+Evidence for proving the working of Assembler includes BubbleSort.asm file along with 6 test examples which are -:
+
+1. test1.asm (3 output files)
+2. test2.asm (2 output files)
+3. test3.asm (3 output files)
+4. test4.asm (3 output files)
+5. test01.asm(3 output files)
+6. test02.asm(3 output files)
+
+All the test files are tested and are working properly.
+
+=====================================
+PROGRAM EXECUTION FORMAT
+=====================================
+
+1. ASSEMBLER :
+
+    EXECUTION FORMAT : g++ asm.cpp -o asm 
+                       .\asm filename.asm
+    Program will ask for flilename (in .asm file format) which on entering will produce 3 files as output.
+    1. Log file
+    2. List file
+    3. Object file
+
+    * Written in C++ Language
+
+    * Every instruction (including the SET instruction) is implemented.
+
+    * asm.cpp is the main and only file of my assembler
+
+    * It is a 2 pass assembler (implemented in asm.cpp)
+    
+    * outputs the required correct information in the form of 3 things :
+       *  the errors and warnings on terminal as well as log file if not assembled properly.
+       *  .lst file for listing 
+       *  .o file for machine code 
+    * All important errors are diagnosed along with their line numbers ( unknown instruction , no such label , duplicate label )
+
+    * Along with errors it also generates warnings whenever there is a label declared but has not been used in the code.
+  
+    * Comments or self descriptive variable names have been used.
+
+    * The Assembler is capable of understanding the values given in decimal , octal or hexadecimal format.
+
+    * SET instruction is also implemented. 
+
+    * Assembler successfully skips empty lines and comments
+
+
+2. EMULATOR :
+    
+    EXECUTION FORMAT : g++ emu.cpp -o emu
+                       filename.o
+
+    All .o files are to be run
+    They are tested and run properly.
+    Upon execution program will ask for filename (in .o format) followed by options such as -:
+
+    trace
+    after
+    before
+    isa
+
+    Upon entering one of the above option respective instruction will be executed.
+ 
+    * By giving instructions like before and after , the program can produce a memory dump before and after execution.
+    * By giving the instruction trace , the program prints the result of the program executed line by line.
+    * It loads object file.
+    * By giving input as isa it prints the instruction set architecture table.
+
+
+    =============================
+    TESTING :
+    =============================
+
+1. ASSEMBLER :
+
+    Assembler has been tested against BubbleSort.asm and 6 test cases.
+
+    1)
+    #Input:asm BubbleSort.asm
+    #Output: 
+    a. BubbleSort.lst
+    b. BubbleSort.log (without any error messages)
+    c. BubbleSort.o
+
+    2) 
+    #Input:asm test1.asm
+    #Output: 
+    a. test1.lst 
+    b. test1.log (without any error messages)
+    c. test1.o
+
+    3) 
+    #Input:asm test2.asm
+    #Output: 
+    a. test2.lst
+    b. test2.log (with 9 error messages)
+
+    4)
+    #Input:asm test3.asm
+    #Output: 
+    a. test3.lst
+    b. test3.log (without any error messages)
+    c. test3.o
+
+    5)
+    #Input:asm test4.asm
+    #Output: 
+    a. test4.lst
+    b. test4.log (without any error messages)
+    c. test4.o
+
+    6)
+    #Input:asm test01.asm
+    #Output:
+    a. test01.lst
+    b. test01.log(without any error messages)
+    c. test01.o
+
+    7)
+    #Input:asm test02.asm
+    #Output:
+    a. test02.lst
+    b. test02.log(without any error messages)
+    c. test02.o
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2. EMULATOR :
+    
+   Emulator has been tested against 7 test cases.
+
+    BubbleSort.asm 
+    test1.asm
+    test2.asm
+    test3.asm
+    test4.asm
+    test01.asm
+    test02.asm
+
+   Upon giving required instruction emulator produces desired results.
+
+    1)
+
+    #Input:asm BubbleSort.o
+    #Output: 
+    
+    BubbleSort.o_memdump.txt
+
+    0x00000000	0x00100000	0x0000000b	0xffffff0a	0x00000b00
+    0x00000004	0x00000003	0x00004c00	0x0000010d	0x00000012
+    0x00000008	0xffffff0a	0x00000003	0x00000203	0xfffffd0a
+    0x0000000c	0x00000000	0x00000003	0x00000100	0x00000103
+    0x00000010	0x00000000	0x00000203	0x00000402	0x00000202
+    0x00000014	0x00000007	0x00000100	0x00000007	0x0000310f
+    0x00000018	0x00000100	0x00000103	0x00000402	0x00000202
+    0x0000001c	0x00000007	0x00000102	0x00000007	0x0000210f
+    0x00000020	0x00000502	0x00000102	0x00000100	0x00000007
+    0x00000024	0x00000502	0x00000006	0x00000603	0x00000102
+    0x00000028	0x00000502	0x00000006	0x00000703	0x00000702
+    0x0000002c	0x00000004	0x00000602	0x00000004	0x00000007
+    0x00000030	0x00000110	0x00000a11	0x00000602	0x00000004
+    0x00000034	0x00000003	0x00000702	0x00000004	0x00000602
+    0x00000038	0x00000005	0x00000002	0x00000702	0x00000005
+    0x0000003c	0x00000100	0x00000102	0x00000006	0x00000103
+    0x00000040	0xffffd911	0x00000100	0x00000202	0x00000006
+    0x00000044	0x00000203	0x00000100	0x00000502	0x00000006
+    0x00000048	0xffffc911	0x00000302	0x0000050a	0x0000000e
+    0x0000004c	0x00000000	0x00000000	0x00000001	0x00000002
+    0x00000050	0x00000003	0x00000004	0x00000005	0x00000006
+    0x00000054	0x00000007	0x00000008	0x00000009
+
+    2)
+    #Input:asm test1.o
+    #Output: 
+    
+    No memory dump produced after instruction because of the infinite loop running 
+
+    3)
+    #Input:asm test2.o
+    #Output: 
+    
+    file could not be opened or is empty (because of several errors encountered)
+
+    4)
+    #Input:asm test3.o
+    #Output:Invalid mnemonic encountered
+   
+    5)
+    #Input:asm test4.o
+    #Output:test4.o_memdump.txt
+    0x00000000	0x00100000	0x0000000b	0xffffff0a	0x00004b00
+    0x00000004	0x00000003	0x00004a00	0x00000004	0x0000020d
+    0x00000008	0x0000010a	0x00000012	0xfffffd0a	0x00000103
+    0x0000000c	0x00000203	0x00000000	0x00000003	0xffffff0a
+    0x00000010	0x00000302	0x00000003	0x00000102	0x0000100d
+    0x00000014	0x0000010a	0x00000302	0x00000005	0x00000302
+    0x00000018	0x00000101	0x00000303	0x00000002	0x00000101
+    0x0000001c	0x00000003	0x00000002	0x00000202	0x00000007
+    0x00000020	0xffffee10	0x00000102	0x0000030a	0x0000000e
+    0x00000024	0xfffffd0a	0x00000103	0x00000203	0x00000100
+    0x00000028	0x00000008	0x00000302	0x00000007	0x00000410
+    0x0000002c	0x00000302	0x00000202	0x00000007	0x00000203
+    0x00000030	0x00000202	0x0000140f	0x00000302	0xffffff01
+    0x00000034	0x00000003	0xffffff0a	0x00000102	0x00000003
+    0x00000038	0x00000302	0xffffff01	0xffffe90d	0x00000102
+    0x0000003c	0x00000003	0x00000103	0x00000302	0xffffe40d
+    0x00000040	0x0000010a	0x00000002	0x00000006	0x00000102
+    0x00000044	0x0000030a	0x0000000e	0x00000100	0x00000102
+    0x00000048	0x0000030a	0x0000000e	0x0000000a	0x00000001
+
+    6)
+    #Input:asm test01.o
+    #Output:test01.o_memdump.txt
+    0x00000000	0x00000004	0x00000200	0x00000007	0x00000410
+    0x00000004	0x00000400	0x00000000	0x00000005	0x00000012
+    0x00000008	0x00000200	0x00000000	0x00000005	0x00000012
+
+    7)
+    #Input:asm test02.o
+    #Output:test02.o_memdump.txt
+    0x00000000	0x0000000a	0x00000600	0x00000006	0x00000000
+    0x00000004	0x00000005	0x00000012
+
+    -----------------------------------------------------------------------------------------------------------------------------------------------------
+
